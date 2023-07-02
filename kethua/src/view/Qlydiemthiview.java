@@ -232,6 +232,7 @@ public class Qlydiemthiview extends javax.swing.JFrame {
         int bien = stu.GetIDtontai(id);
         int bien1 = sub.getsizeSub(monhoc);
         int bien2 = grade.getIDSub(id, monhoc);
+        int bien3 = stu.getIDName(id, tensv);
         System.out.println(bien);
         System.out.println(bien1);
         if(bien == 0){
@@ -239,6 +240,9 @@ public class Qlydiemthiview extends javax.swing.JFrame {
         }
         else if(tensv.length() <= 0){
              JOptionPane.showMessageDialog(this, "Nhập tên sinh viên");
+        }
+        else if(bien3 == 0){
+             JOptionPane.showMessageDialog(this, "Tên sinh viên không trùng khớp");
         }
         else if(diemGK < 0f || diemGK > 10f){
             JOptionPane.showMessageDialog(this, "điểm giữa kỳ không hợp lệ");

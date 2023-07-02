@@ -172,4 +172,16 @@ public class StudentManager {
         }
         return svv.size();
     }
+     public int getIDName(int id, String Tensinhvien){//Kiem tra ten sinh vien khop voi mssv ko
+     List<Sinhvien>l = new ArrayList<>();
+      List<Sinhvien>list = new ArrayList<>();
+      StudentManager stu = new StudentManager();
+      list = stu.FindbyId(id);
+       for(int i = 0; i < list.size(); i++){
+         if(list.get(0).getTensv().equalsIgnoreCase(Tensinhvien)){
+           l.add(list.get(i));
+         }
+     }
+     return l.size();
+  }
 }

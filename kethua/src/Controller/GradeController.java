@@ -202,7 +202,7 @@ public class GradeController {
    }
         return sv;
     }
-   public List<SVgrademodel>AVGbyclass(int id)
+   public List<SVgrademodel>AVGbyclass(int id)//tinh diem trung binh lop cua sinh vien
    {
       List<SVgrademodel>l = new ArrayList<>();
       List<Sinhvien>list = new ArrayList<>();
@@ -217,7 +217,7 @@ public class GradeController {
      }
      return neww;
    }
-   public List<SVgrademodel>HStruot(){
+   public List<SVgrademodel>HStruot(){//Hien thi sinh vien truot ra ngoai man hinh
     List<SVgrademodel> sv = new ArrayList<>();
      List<SVgrademodel> student = new ArrayList<>();
      sv = hocbong();
@@ -269,7 +269,7 @@ public class GradeController {
    }
         return sv;
  }
- public List<SVgrademodel>hocbong1(){
+ public List<SVgrademodel>hocbong1(){//Hien thi danh sach sinh vien co hoc bong ra man hinh
      List<SVgrademodel> sv = new ArrayList<>();
      List<SVgrademodel> student = new ArrayList<>();
      sv = HStruot();
@@ -283,7 +283,7 @@ public class GradeController {
      }
     return student;
  }
- public List<SVgrademodel>Findgrade(int ID){
+ public List<SVgrademodel>Findgrade(int ID){//tim thong tin sinh vien bang ID
        List<SVgrademodel> sv = new ArrayList<>();
         Connection connection = null;
         PreparedStatement statement = null;
@@ -306,7 +306,7 @@ public class GradeController {
         }
         return sv;
     }
-  public int getIDSub(int id, String Tensub){
+  public int getIDSub(int id, String Tensub){//kiem tra xem sinh vien da co diem mon nay chua
       List<SVgrademodel>idsub = new ArrayList<>();
       List<SVgrademodel>idsubb = new ArrayList<>();
       idsub = Findgrade(id);
@@ -317,6 +317,7 @@ public class GradeController {
       }
       return idsubb.size();
   }
+  
   public static void main(String[] args){
       GradeController grade = new GradeController();
       List<SVgrademodel> list = grade.AVGbyclass(400656);
